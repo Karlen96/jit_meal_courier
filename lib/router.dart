@@ -2,7 +2,8 @@ import 'package:auto_route/auto_route.dart';
 
 import 'pages/dashboard/dashboard_page.dart';
 import 'pages/login_page/login_page.dart';
-import 'pages/splash_screen/splash_screen.dart';
+import 'pages/order_page/order_page.dart';
+import 'pages/splash_screen.dart';
 
 export 'router.gr.dart';
 
@@ -21,6 +22,9 @@ export 'router.gr.dart';
     ),
     AdaptiveRoute(
       page: DashboardPage,
+    ),
+    AdaptiveRoute(
+      page: OrderPage,
     ),
   ],
 )

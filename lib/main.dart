@@ -23,10 +23,10 @@ Future<void> run({Flavor env = Flavor.DEV}) async {
   runApp(
     EasyLocalization(
       supportedLocales: const [
-        Locale('en', 'US'),
+        Locale('ru', 'RU'),
       ],
-      startLocale: const Locale('en', 'US'),
-      fallbackLocale: const Locale('en', 'US'),
+      startLocale: const Locale('ru', 'RU'),
+      fallbackLocale: const Locale('ru', 'RU'),
       path: 'assets/translations',
       child: const MyApp(),
     ),

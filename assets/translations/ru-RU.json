@@ -1,0 +1,41 @@
+{
+  "keywords": {
+    "next": "Next",
+    "skip": "Skip",
+    "cancel": "Cancel",
+    "signOut": "Sign out",
+    "close": "Close",
+    "yes": "Yes",
+    "ok": "Ok",
+    "logout": "Выйти"
+  },
+  "dashboardScreen": {
+    "orders": "Заказы",
+    "emptyOrder": "Заказов нет"
+  },
+  "orderScreen": {
+    "status": "Состояние",
+    "customer": "Покупатель",
+    "amount": "Общая сумма",
+    "discount": "Скидка",
+    "prepayment": "Предоплата",
+    "totalForPayment": "Итог к оплате",
+    "comment": "Комментарий"
+  },
+  "filterType": {
+    "tomorrow": "За вчера",
+    "today": "За сегодня",
+    "yesterday": "За завтра"
+  },
+  "orderStatus": {
+    "confirmed": "Подтвержден",
+    "inProgress": "Достовляется",
+    "delivered": "Доставлен",
+    "declined": "Не доставлен"
+  },
+  "error": {
+    "phoneNumber": "Looks like the number you entered is not valid.\nPlease check the number and try again.",
+    "invalidSmsCode": "Looks like something went wrong, please check the verification code and try again.",
+    "emailExists": "Email already exist"
+  }
+}

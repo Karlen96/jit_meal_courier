@@ -8,6 +8,8 @@ import 'color_utils.dart';
 /// DO NOT EDIT, all your changes would be lost.
 class Assets {
   Assets._();
+
+  static const String logo = 'assets/images/logo.png';
 }
 
 extension AssetsHelper on String {

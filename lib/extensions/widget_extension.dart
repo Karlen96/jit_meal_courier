@@ -8,7 +8,7 @@ extension WidgetModifier on Widget {
     );
   }
 
-  Widget paddingHorizontal([double value = 24]) {
+  Widget paddingHorizontal([double value = 16]) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: value),
       child: this,
