@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import '../../extensions/extensions.dart';
-import '../../themes/app_colors.dart';
+import '../../../extensions/extensions.dart';
+import '../../../themes/app_colors.dart';
 
 class InfoCardItem extends HookWidget {
   final String title;
@@ -18,7 +18,7 @@ class InfoCardItem extends HookWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: const BoxDecoration(
-        color: AppColors.lightGray,
+        color: AppColors.backgroundColor,
       ),
       child: SizedBox(
         width: context.width,

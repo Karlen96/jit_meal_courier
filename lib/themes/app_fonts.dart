@@ -1,3 +1,3 @@
 class FontFamily {
-  static const CeraPro = 'CeraPro';
+  static const Roboto = 'Roboto';
 }

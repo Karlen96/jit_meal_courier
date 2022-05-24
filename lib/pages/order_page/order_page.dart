@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../../store/loading_state/loading_state.dart';
+import '../../extensions/extensions.dart';
+import '../../hooks/loading_state_hook.dart';
 import '../../store/order_state/order_state.dart';
 import '../../widgets/loading_widget.dart';
-import 'order_comment.dart';
-import 'order_details.dart';
-import 'order_info_actions.dart';
+import 'widgets/order_comment.dart';
+import 'widgets/order_details.dart';
+import 'widgets/order_info_actions.dart';
 
 class OrderPage extends HookWidget {
   final int orderId;
@@ -20,7 +21,7 @@ class OrderPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final _orderState = useMemoized(OrderState.new);
-    final _loadingState = useMemoized(LoadingState.new);
+    final _loadingState = useLoadingState();
 
     final initState = useCallback(
       () async {
@@ -45,25 +46,32 @@ class OrderPage extends HookWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
+            padding: EdgeInsets.only(bottom: context.bottomPadding + 24),
             child: Observer(
-              builder: (_) => _orderState.order != null
-                  ? Column(
-                      children: [
-                        OrderInfoActions(order: _orderState.order!),
-                        OrderDetails(order: _orderState.order!),
-                        if (_orderState.order!.comment != null)
-                          OrderComments(
-                            comment: _orderState.order!.comment!,
-                          ),
-                      ],
-                    )
-                  : const SizedBox(),
+              builder: (_) {
+                if (_orderState.order != null) {
+                  return Column(
+                    children: [
+                      OrderInfoActions(order: _orderState.order!),
+                      OrderDetails(order: _orderState.order!),
+                      if (_orderState.order!.comment != null)
+                        OrderComments(
+                          comment: _orderState.order!.comment!,
+                        ),
+                    ],
+                  );
+                }
+                return const SizedBox();
+              },
             ),
           ),
           Observer(
-            builder: (_) => _loadingState.isLoading
-                ? const LoadingWidget()
-                : const SizedBox(),
+            builder: (_) {
+              if (_loadingState.isLoading) {
+                return const LoadingWidget();
+              }
+              return const SizedBox();
+            },
           ),
         ],
       ),

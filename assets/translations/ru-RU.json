@@ -33,6 +33,12 @@
     "delivered": "Доставлен",
     "declined": "Не доставлен"
   },
+  "loginScreen": {
+    "signIn": "Вход",
+    "userName": "Имя пользователя",
+    "password": "Пароль",
+    "toComeIn": "Войти"
+  },
   "error": {
     "phoneNumber": "Looks like the number you entered is not valid.\nPlease check the number and try again.",
     "invalidSmsCode": "Looks like something went wrong, please check the verification code and try again.",

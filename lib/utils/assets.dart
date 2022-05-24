@@ -32,7 +32,7 @@ extension AssetsHelper on String {
 
   SvgPicture dynamicColoredSvg({
     Color lightColor = AppColors.white,
-    Color darkColor = AppColors.darkGray,
+    Color darkColor = AppColors.backgroundColor2,
     bool invertColor = false,
     double? height,
     double? width,

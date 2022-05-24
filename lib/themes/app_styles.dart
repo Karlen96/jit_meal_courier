@@ -23,7 +23,7 @@ final ButtonStyle flatButtonStyle = TextButton.styleFrom(
     borderRadius: BorderRadius.all(Radius.circular(2)),
   ),
   textStyle: const TextStyle(
-    fontFamily: FontFamily.CeraPro,
+    fontFamily: FontFamily.Roboto,
     fontWeight: FontWeight.w500,
   ),
 );
@@ -36,7 +36,7 @@ final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
     borderRadius: BorderRadius.all(Radius.circular(2)),
   ),
   textStyle: const TextStyle(
-    fontFamily: FontFamily.CeraPro,
+    fontFamily: FontFamily.Roboto,
     fontWeight: FontWeight.w500,
     color: AppColors.white,
   ),
@@ -49,7 +49,7 @@ final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
     borderRadius: BorderRadius.all(Radius.circular(2)),
   ),
   textStyle: const TextStyle(
-    fontFamily: FontFamily.CeraPro,
+    fontFamily: FontFamily.Roboto,
     fontWeight: FontWeight.w500,
   ),
 ).copyWith(
@@ -64,9 +64,9 @@ final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
 );
 
 const TextStyle pinThemeTextStyle = TextStyle(
-  color: AppColors.charcoal,
+  color: AppColors.darkBlue,
   fontSize: 27,
-  fontFamily: FontFamily.CeraPro,
+  fontFamily: FontFamily.Roboto,
 );
 
 final BorderRadius textFieldBorder = BorderRadius.circular(20);

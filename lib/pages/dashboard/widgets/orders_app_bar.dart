@@ -16,7 +16,7 @@ class OrdersAppBar extends HookWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     final _filterItems = useMemoized(() {
       return FilterType.values.map((value) {
-        return DropdownMenuItem<FilterType>(
+        return PopupMenuItem<FilterType>(
           value: value,
           child: Text(value.title.tr()),
         );
@@ -29,27 +29,14 @@ class OrdersAppBar extends HookWidget with PreferredSizeWidget {
       ),
       elevation: 2,
       actions: [
-        SizedBox(
-          width: 100,
-          height: 36,
-          child: Center(
-            child: DropdownButton<FilterType>(
-              items: _filterItems,
-              isExpanded: true,
-              underline: const SizedBox(),
-              icon: const SizedBox(),
-              hint: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  Icon(Icons.calendar_today_rounded),
-                  SizedBox(width: 16)
-                ],
-              ),
-              alignment: AlignmentDirectional.centerEnd,
-              onChanged: onChangeFilter,
-            ),
+        Center(
+          child: PopupMenuButton<FilterType>(
+            onSelected: onChangeFilter,
+            itemBuilder: (_) => _filterItems,
+            child: const Icon(Icons.calendar_today_rounded),
           ),
         ),
+        const SizedBox(width: 16)
       ],
     );
   }

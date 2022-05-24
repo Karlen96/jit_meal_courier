@@ -7,12 +7,11 @@ import 'app_fonts.dart';
 import 'app_styles.dart';
 
 final base = ThemeData.dark();
-const scaffoldBackgroundColor = AppColors.charcoal;
 
 final darkTheme = base.copyWith(
   shadowColor: AppColors.yellow,
   colorScheme: base.colorScheme.copyWith(
-    primary: AppColors.charcoal,
+    primary: AppColors.darkBlue,
     onPrimary: AppColors.white,
   ),
   tabBarTheme: TabBarTheme(
@@ -20,8 +19,8 @@ final darkTheme = base.copyWith(
       color: AppColors.white,
     ),
     labelStyle: const TextStyle(
-      color: AppColors.charcoal,
-      fontFamily: FontFamily.CeraPro,
+      color: AppColors.darkBlue,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 16,
       height: 1,
@@ -31,7 +30,7 @@ final darkTheme = base.copyWith(
       color: AppColors.white,
     ),
     indicatorSize: TabBarIndicatorSize.tab,
-    labelColor: AppColors.charcoal,
+    labelColor: AppColors.darkBlue,
     unselectedLabelColor: AppColors.white,
     labelPadding: const EdgeInsets.symmetric(
       horizontal: 10,
@@ -40,25 +39,25 @@ final darkTheme = base.copyWith(
   ),
   primaryColor: AppColors.yellow,
   // shadowColor: Colors.grey[300],
-  scaffoldBackgroundColor: AppColors.charcoal,
-  dividerColor: AppColors.extraLightGray,
+  scaffoldBackgroundColor: AppColors.darkBlue,
+  dividerColor: AppColors.backgroundColor2,
   dividerTheme: base.dividerTheme.copyWith(
     space: 1,
     indent: 24,
     endIndent: 24,
-    color: AppColors.lightGray,
+    color: AppColors.backgroundColor2,
   ),
-  primaryIconTheme: base.primaryIconTheme.copyWith(color: AppColors.charcoal),
-  iconTheme: base.iconTheme.copyWith(color: AppColors.charcoal),
+  primaryIconTheme: base.primaryIconTheme.copyWith(color: AppColors.darkBlue),
+  iconTheme: base.iconTheme.copyWith(color: AppColors.darkBlue),
   appBarTheme: base.appBarTheme.copyWith(
-    color: AppColors.charcoal,
+    color: AppColors.darkBlue,
     centerTitle: true,
     elevation: 0,
     iconTheme: const IconThemeData(
       color: AppColors.white,
     ),
     titleTextStyle: base.primaryTextTheme.headline6!.copyWith(
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       color: AppColors.white,
       fontWeight: FontWeight.bold,
       fontSize: 20,
@@ -69,22 +68,22 @@ final darkTheme = base.copyWith(
     toolbarTextStyle: base.textTheme
         .copyWith(
           bodyText1: base.textTheme.bodyText1!.copyWith(
-            fontFamily: FontFamily.CeraPro,
+            fontFamily: FontFamily.Roboto,
             color: AppColors.white,
             fontWeight: FontWeight.bold,
           ),
           headline6: base.textTheme.headline6!.copyWith(
-            fontFamily: FontFamily.CeraPro,
-            color: AppColors.chalkboardBlack,
+            fontFamily: FontFamily.Roboto,
+            color: AppColors.darkBlue,
             fontWeight: FontWeight.bold,
           ),
           headline3: base.textTheme.headline3!.copyWith(
-            fontFamily: FontFamily.CeraPro,
+            fontFamily: FontFamily.Roboto,
             color: AppColors.white,
             fontWeight: FontWeight.bold,
           ),
           headline4: base.textTheme.headline4!.copyWith(
-            fontFamily: FontFamily.CeraPro,
+            fontFamily: FontFamily.Roboto,
             color: AppColors.white,
             fontWeight: FontWeight.w500,
           ),
@@ -92,7 +91,7 @@ final darkTheme = base.copyWith(
         .bodyText2,
   ),
   bottomNavigationBarTheme: base.bottomNavigationBarTheme.copyWith(
-    backgroundColor: AppColors.charcoal,
+    backgroundColor: AppColors.darkBlue,
     elevation: 0,
   ),
   chipTheme: base.chipTheme.copyWith(
@@ -101,19 +100,19 @@ final darkTheme = base.copyWith(
     labelStyle: const TextStyle(
       color: AppColors.white,
       fontWeight: FontWeight.w500,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
     ),
-    selectedColor: AppColors.charcoal,
+    selectedColor: AppColors.darkBlue,
     secondaryLabelStyle: const TextStyle(
-      color: AppColors.charcoal,
+      color: AppColors.darkBlue,
       fontWeight: FontWeight.w500,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
     ),
     secondarySelectedColor: Colors.transparent,
   ),
   sliderTheme: base.sliderTheme.copyWith(
     activeTrackColor: AppColors.red,
-    inactiveTrackColor: AppColors.extraLightGray,
+    inactiveTrackColor: AppColors.backgroundColor2,
     overlayColor: Colors.transparent,
     thumbColor: AppColors.red,
     thumbShape: SliderComponentShape.noOverlay,
@@ -132,17 +131,17 @@ final darkTheme = base.copyWith(
   inputDecorationTheme: base.inputDecorationTheme.copyWith(
     errorStyle: const TextStyle(
       color: AppColors.red,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
     ),
     hintStyle: base.primaryTextTheme.bodyText1!.copyWith(
-      color: AppColors.grayMedium,
-      fontFamily: FontFamily.CeraPro,
+      color: AppColors.backgroundColor2,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 16,
       letterSpacing: -.32,
       height: 1.25,
     ),
-    fillColor: AppColors.darkTextFillColor,
+    fillColor: AppColors.darkBlue,
     contentPadding: const EdgeInsets.symmetric(horizontal: 16),
     border: const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -167,8 +166,8 @@ final darkTheme = base.copyWith(
     ),
     filled: true,
     labelStyle: const TextStyle(
-      color: AppColors.darkGray,
-      fontFamily: FontFamily.CeraPro,
+      color: AppColors.darkBlue,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 16,
       letterSpacing: -.32,
@@ -177,7 +176,7 @@ final darkTheme = base.copyWith(
   ),
   buttonTheme: base.buttonTheme.copyWith(
     textTheme: ButtonTextTheme.primary,
-    buttonColor: AppColors.charcoal,
+    buttonColor: AppColors.darkBlue,
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
@@ -192,14 +191,14 @@ final darkTheme = base.copyWith(
           return states.contains(MaterialState.disabled)
               ? TextStyle(
                   color: AppColors.white.withOpacity(0.4),
-                  fontFamily: FontFamily.CeraPro,
+                  fontFamily: FontFamily.Roboto,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   height: 1.1,
                 )
               : const TextStyle(
                   color: AppColors.white,
-                  fontFamily: FontFamily.CeraPro,
+                  fontFamily: FontFamily.Roboto,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                   height: 1.1,
@@ -213,25 +212,25 @@ final darkTheme = base.copyWith(
       }),
       foregroundColor: MaterialStateProperty.resolveWith((states) {
         return states.contains(MaterialState.disabled)
-            ? AppColors.burgundy.withOpacity(0.4)
-            : AppColors.burgundy;
+            ? AppColors.darkBlue40
+            : AppColors.darkBlue;
       }),
       backgroundColor: MaterialStateProperty.resolveWith(
         (states) {
           return states.contains(MaterialState.disabled)
-              ? AppColors.grayMedium.withOpacity(0.4)
-              : AppColors.grayMedium;
+              ? AppColors.darkBlue40
+              : AppColors.darkBlue;
         },
       ),
       overlayColor: MaterialStateProperty.all(
-        AppColors.grayMedium.withOpacity(.5),
+        AppColors.darkBlue.withOpacity(.5),
       ),
     ),
   ),
   tooltipTheme: TooltipThemeData(
     preferBelow: false,
     decoration: BoxDecoration(
-      color: AppColors.burgundy,
+      color: AppColors.darkBlue,
       borderRadius: BorderRadius.circular(8),
     ),
   ),
@@ -249,7 +248,7 @@ final darkTheme = base.copyWith(
         (states) {
           return const TextStyle(
             color: AppColors.white,
-            fontFamily: FontFamily.CeraPro,
+            fontFamily: FontFamily.Roboto,
             fontWeight: FontWeight.bold,
             fontSize: 20,
             height: 1.1,
@@ -270,7 +269,7 @@ final darkTheme = base.copyWith(
         },
       ),
       overlayColor: MaterialStateProperty.all(
-        AppColors.grayMedium.withOpacity(.5),
+        AppColors.backgroundColor2.withOpacity(.5),
       ),
     ),
   ),
@@ -279,13 +278,13 @@ final darkTheme = base.copyWith(
   textTheme: base.primaryTextTheme.copyWith(
     headline1: base.primaryTextTheme.headline1!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.bold,
       fontSize: 26,
     ),
     headline2: base.primaryTextTheme.headline2!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.bold,
       fontSize: 38,
       letterSpacing: -.76,
@@ -293,7 +292,7 @@ final darkTheme = base.copyWith(
     ),
     headline3: base.primaryTextTheme.headline3!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.bold,
       fontSize: 28,
       letterSpacing: -.56,
@@ -301,14 +300,14 @@ final darkTheme = base.copyWith(
     ),
     headline4: base.primaryTextTheme.headline4!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 26,
       letterSpacing: -.52,
       height: 1,
     ),
     headline5: base.primaryTextTheme.headline5!.copyWith(
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       color: AppColors.white,
       fontWeight: FontWeight.bold,
       fontSize: 24,
@@ -316,7 +315,7 @@ final darkTheme = base.copyWith(
       height: 1.2,
     ),
     headline6: base.primaryTextTheme.headline6!.copyWith(
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       color: AppColors.white,
       fontWeight: FontWeight.bold,
       fontSize: 20,
@@ -325,7 +324,7 @@ final darkTheme = base.copyWith(
     ),
     subtitle1: base.primaryTextTheme.subtitle1!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.bold,
       fontSize: 16,
       height: 1.25,
@@ -333,7 +332,7 @@ final darkTheme = base.copyWith(
     ),
     subtitle2: base.primaryTextTheme.subtitle2!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.w500,
       fontSize: 16,
       height: 1.25,
@@ -341,7 +340,7 @@ final darkTheme = base.copyWith(
     ),
     bodyText1: base.primaryTextTheme.bodyText1!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 16,
       letterSpacing: -.32,
@@ -349,7 +348,7 @@ final darkTheme = base.copyWith(
     ),
     bodyText2: base.primaryTextTheme.bodyText2!.copyWith(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 14,
       letterSpacing: -.16,
@@ -357,7 +356,7 @@ final darkTheme = base.copyWith(
     ),
     caption: const TextStyle(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 12,
       height: 1.1,
@@ -365,7 +364,7 @@ final darkTheme = base.copyWith(
     ),
     overline: const TextStyle(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 10,
       height: 1.1,
@@ -373,7 +372,7 @@ final darkTheme = base.copyWith(
     ),
     button: const TextStyle(
       color: AppColors.white,
-      fontFamily: FontFamily.CeraPro,
+      fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.bold,
       fontSize: 20,
       height: 1.1,

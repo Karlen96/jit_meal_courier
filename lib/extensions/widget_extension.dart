@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 extension WidgetModifier on Widget {
-  Widget paddingAll([double value = 24]) {
+  Widget paddingAll([double value = 16]) {
     return Padding(
       padding: EdgeInsets.all(value),
       child: this,
@@ -22,7 +22,7 @@ extension WidgetModifier on Widget {
     );
   }
 
-  Widget paddingSymmetric({double vertical = 12, double horizontal = 24}) {
+  Widget paddingSymmetric({double vertical = 12, double horizontal = 16}) {
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: vertical,

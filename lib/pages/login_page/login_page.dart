@@ -1,34 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-import '../../store/loading_state/loading_state.dart';
-import '../../store/login_state/login_state.dart';
+import '../../constants/button_size_type.dart';
+import '../../extensions/elevated_button_extension.dart';
+import '../../extensions/extensions.dart';
+import '../../providers/screen_service.dart';
+import '../../router.gr.dart';
+import '../../utils/assets.dart';
+import '../../widgets/custom_button.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends HookWidget {
   const LoginPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
-  final loginState = LoginState();
-  final loadingState = LoadingState();
-  final phoneNumberController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    final _onSignIn = useCallback(
+      () {
+        router.pushAndPopUntil(const DashboardRoute(), predicate: (_) => false);
+      },
+      [0],
+    );
+
+    return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 2,
+          title: Text('loginScreen.signIn'.tr()),
+        ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              const SizedBox(height: 24),
+              Image.asset(Assets.logo).paddingAll(36),
+              const SizedBox(height: 24),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'loginScreen.userName'.tr(),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'loginScreen.password'.tr(),
+                ),
+              ),
+              const SizedBox(height: 16),
+              CustomButton(
+                onPressed: _onSignIn,
+                style: context.theme.buttonStyle(size: ButtonSizes.MEDIUM),
+                child: Text('loginScreen.toComeIn'.tr()),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

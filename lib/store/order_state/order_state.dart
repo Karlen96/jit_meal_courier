@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:mobx/mobx.dart';
 
 import '../../constants/order_status.dart';
@@ -15,9 +17,12 @@ abstract class _OrderState with Store {
 
   @action
   Future<void> getOrder({required int orderId}) async {
+    final random = Random();
+    final date = DateTime.now();
     final generateOrder = OrderModel(
       id: orderId,
-      status: OrderStatus.DELIVERED,
+      status: OrderStatus.values[random.nextInt(OrderStatus.values.length)],
+      deliveredAt: date,
       orderProducts: List.generate(
         10,
         (i) => OrderProductModel(

@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../providers/screen_service.dart';
 import '../router.dart';
+import '../utils/storage_utils.dart';
 
 class SplashScreenPage extends HookWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
@@ -25,12 +26,11 @@ class SplashScreenPage extends HookWidget {
   }
 
   Future<void> checkSession() async {
-    await router.popAndPush(const DashboardRoute());
-    // final _token = await StorageUtils.getAccessToken();
-    // if (_token != null) {
-    //   await router.popAndPush(const LoginRoute());
-    // } else {
-    //   await router.popAndPush(const DashboardRoute());
-    // }
+    final _token = await StorageUtils.getAccessToken();
+    if (_token != null) {
+      await router.popAndPush(const LoginRoute());
+    } else {
+      await router.popAndPush(const DashboardRoute());
+    }
   }
 }

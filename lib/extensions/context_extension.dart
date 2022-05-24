@@ -74,7 +74,7 @@ extension ThemeDataHelper on ThemeData {
 
   TextStyle get caption1 => textTheme.caption!;
 
-  TextStyle get caption2 => textTheme.caption!.bold;
+  TextStyle get caption2 => textTheme.caption!.bold.size(14);
 
   TextStyle get overline => textTheme.overline!;
 
@@ -143,25 +143,11 @@ extension TextStyleHelpers on TextStyle {
 
   TextStyle get yellow => copyWith(color: AppColors.yellow);
 
-  TextStyle get darkGray => copyWith(color: AppColors.darkGray);
-
-  TextStyle get mediumGray => copyWith(color: AppColors.grayMedium);
-
-  TextStyle get charcoal => copyWith(color: AppColors.charcoal);
-
   TextStyle get red => copyWith(color: AppColors.red);
 
-  TextStyle get chalkboardBlack => copyWith(color: AppColors.chalkboardBlack);
-
-  TextStyle get burgundy => copyWith(color: AppColors.burgundy);
-
-  TextStyle get lightGray => copyWith(color: AppColors.lightGray);
-
-  TextStyle get error => copyWith(color: AppColors.error);
-
   TextStyle dynamic({
-    Color lightColor = AppColors.grayMedium,
-    Color darkColor = AppColors.darkGray,
+    Color lightColor = AppColors.backgroundColor2,
+    Color darkColor = AppColors.darkBlue,
     bool invertColor = false,
   }) {
     return copyWith(
