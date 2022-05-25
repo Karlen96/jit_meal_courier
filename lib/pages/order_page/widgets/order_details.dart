@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../extensions/extensions.dart';
 import '../../../models/order_model/order_model.dart';
+import '../../../themes/app_colors.dart';
 import '../../../widgets/custom_list_tile.dart';
 import 'info_card_item.dart';
 
@@ -26,10 +27,13 @@ class OrderDetails extends HookWidget {
         ).paddingHorizontal(),
         const SizedBox(height: 24),
         Row(
-          children: const [
-            Icon(Icons.phone),
-            SizedBox(width: 12),
-            Text('+37488111111'),
+          children: [
+            const Icon(Icons.phone, size: 14),
+            const SizedBox(width: 12),
+            Text(
+              '+37488111111',
+              style: context.theme.bodyText1,
+            ),
           ],
         ).paddingHorizontal(),
         const SizedBox(height: 16),
@@ -39,6 +43,9 @@ class OrderDetails extends HookWidget {
             title: order.orderProducts[i].product.name!,
             titleStyle: context.theme.caption2,
             trailing: order.orderProducts[i].product.price!.toStringAsFixed(2),
+            subtitleStyle: context.theme.bodyText1.copyWith(
+              color: AppColors.backgroundColor2,
+            ),
             subtitle:
                 '${order.orderProducts[i].quantity.toStringAsFixed(2)} * ${order.orderProducts[i].product.price!.toStringAsFixed(2)}',
           ),

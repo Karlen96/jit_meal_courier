@@ -46,6 +46,7 @@ class OrderPage extends HookWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.only(bottom: context.bottomPadding + 24),
             child: Observer(
               builder: (_) {

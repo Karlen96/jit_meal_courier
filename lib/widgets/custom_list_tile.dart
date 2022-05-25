@@ -35,9 +35,11 @@ class CustomListTile extends HookWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title,
-                style: titleStyle ?? context.theme.bodyText2,
+              Expanded(
+                child: Text(
+                  title,
+                  style: titleStyle ?? context.theme.bodyText1,
+                ),
               ),
               Row(
                 children: [

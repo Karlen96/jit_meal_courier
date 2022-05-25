@@ -10,12 +10,10 @@ abstract class _LoginState with Store {
   }
 
   @observable
-  String email = '';
+  String userName = '';
   @observable
   String password = '';
 
-  @observable
-  String? emailError = '';
   @observable
   String? passwordError = '';
 
@@ -26,7 +24,6 @@ abstract class _LoginState with Store {
       return;
     }
     _disposers = [
-      reaction((_) => email, validateEmail),
       reaction((_) => password, validatePassword),
     ];
   }
@@ -37,15 +34,6 @@ abstract class _LoginState with Store {
     }
     for (final d in _disposers!) {
       d();
-    }
-  }
-
-  @action
-  void validateEmail(_) {
-    if (email.isEmpty) {
-      emailError = 'localValidationError.phone';
-    } else {
-      emailError = null;
     }
   }
 

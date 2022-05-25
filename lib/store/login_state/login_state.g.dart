@@ -9,18 +9,19 @@ part of 'login_state.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$LoginState on _LoginState, Store {
-  late final _$emailAtom = Atom(name: '_LoginState.email', context: context);
+  late final _$userNameAtom =
+      Atom(name: '_LoginState.userName', context: context);
 
   @override
-  String get email {
-    _$emailAtom.reportRead();
-    return super.email;
+  String get userName {
+    _$userNameAtom.reportRead();
+    return super.userName;
   }
 
   @override
-  set email(String value) {
-    _$emailAtom.reportWrite(value, super.email, () {
-      super.email = value;
+  set userName(String value) {
+    _$userNameAtom.reportWrite(value, super.userName, () {
+      super.userName = value;
     });
   }
 
@@ -37,22 +38,6 @@ mixin _$LoginState on _LoginState, Store {
   set password(String value) {
     _$passwordAtom.reportWrite(value, super.password, () {
       super.password = value;
-    });
-  }
-
-  late final _$emailErrorAtom =
-      Atom(name: '_LoginState.emailError', context: context);
-
-  @override
-  String? get emailError {
-    _$emailErrorAtom.reportRead();
-    return super.emailError;
-  }
-
-  @override
-  set emailError(String? value) {
-    _$emailErrorAtom.reportWrite(value, super.emailError, () {
-      super.emailError = value;
     });
   }
 
@@ -76,17 +61,6 @@ mixin _$LoginState on _LoginState, Store {
       ActionController(name: '_LoginState', context: context);
 
   @override
-  void validateEmail(dynamic _) {
-    final _$actionInfo = _$_LoginStateActionController.startAction(
-        name: '_LoginState.validateEmail');
-    try {
-      return super.validateEmail(_);
-    } finally {
-      _$_LoginStateActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   void validatePassword(dynamic _) {
     final _$actionInfo = _$_LoginStateActionController.startAction(
         name: '_LoginState.validatePassword');
@@ -100,9 +74,8 @@ mixin _$LoginState on _LoginState, Store {
   @override
   String toString() {
     return '''
-email: ${email},
+userName: ${userName},
 password: ${password},
-emailError: ${emailError},
 passwordError: ${passwordError}
     ''';
   }

@@ -31,18 +31,20 @@ class OrderInfoActions extends HookWidget {
       },
       [0],
     );
+
     return InfoCardItem(
       title: 'orderScreen.status'.tr(),
       children: [
         const SizedBox(height: 16),
         Text(
           order.status.title.tr(),
-          style: context.theme.caption2.copyWith(
+          style: context.theme.headline6.copyWith(
             color: AppColors.green,
           ),
         ).paddingHorizontal(),
         if (order.status == OrderStatus.DELIVERED)
-          Text(_deliveredAt).paddingHorizontal(),
+          Text(_deliveredAt, style: context.theme.bodyText1)
+              .paddingHorizontal(),
         const SizedBox(height: 16),
         const Divider(),
         if (order.status == OrderStatus.DELIVERED) const DeliveredActions(),
