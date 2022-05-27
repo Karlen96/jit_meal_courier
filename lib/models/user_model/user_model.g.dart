@@ -7,16 +7,12 @@ part of 'user_model.dart';
 // **************************************************************************
 
 _$_UserModel _$$_UserModelFromJson(Map json) => _$_UserModel(
-      email: json['email'] as String?,
       id: json['id'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      email: json['email'] as String?,
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
+      password: json['Password'] as String?,
+      userName: json['Username'] as String?,
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) {
@@ -28,11 +24,11 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) {
     }
   }
 
-  writeNotNull('email', instance.email);
   writeNotNull('id', instance.id);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
+  writeNotNull('email', instance.email);
   writeNotNull('firstName', instance.firstName);
   writeNotNull('lastName', instance.lastName);
+  writeNotNull('Password', instance.password);
+  writeNotNull('Username', instance.userName);
   return val;
 }

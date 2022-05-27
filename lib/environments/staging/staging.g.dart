@@ -7,7 +7,7 @@ part of 'staging.dart';
 // **************************************************************************
 
 const _$stagingEnvJsonLiteral = {
-  'apiUrl': 'https://example-staging.com',
+  'apiUrl': 'https://jitmeal-dev-api.moneteam.com/',
   'env': 'STAGING',
   'production': false
 };

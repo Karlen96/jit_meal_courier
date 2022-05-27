@@ -1,13 +1,18 @@
 import 'dart:async';
 
+import '../../constants/requests_url.dart';
+import '../../models/token_model/token_model.dart';
 import '../../models/user_model/user_model.dart';
 import '../dio.dart';
 
 class AuthRepository {
-  static Future<UserModel> getCurrentUser() async {
-    final res = await dio.get(
-      '/auth/me',
+  static Future<TokenModel> signIn({
+    required UserModel userModel,
+  }) async {
+    final res = await dio.post(
+      RequestsUrl.auth,
+      data: userModel.toJson(),
     );
-    return UserModel.fromJson(res.data);
+    return TokenModel.fromJson(res.data);
   }
 }

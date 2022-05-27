@@ -7,7 +7,7 @@ part of 'development.dart';
 // **************************************************************************
 
 const _$developmentEnvJsonLiteral = {
-  'apiUrl': 'https://example-dev.com',
+  'apiUrl': 'https://jitmeal-dev-api.moneteam.com/',
   'env': 'DEV',
   'production': false
 };

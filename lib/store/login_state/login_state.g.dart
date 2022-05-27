@@ -57,6 +57,14 @@ mixin _$LoginState on _LoginState, Store {
     });
   }
 
+  late final _$onSignInAsyncAction =
+      AsyncAction('_LoginState.onSignIn', context: context);
+
+  @override
+  Future<void> onSignIn() {
+    return _$onSignInAsyncAction.run(() => super.onSignIn());
+  }
+
   late final _$_LoginStateActionController =
       ActionController(name: '_LoginState', context: context);
 

@@ -1,6 +1,5 @@
 import 'package:mobx/mobx.dart';
 
-import '../../http/repositories/auth_repository.dart';
 import '../../models/user_model/user_model.dart';
 import '../../utils/storage_utils.dart';
 import '../store.dart';
@@ -25,16 +24,13 @@ abstract class _AuthState with Store {
   }
 
   @action
-  Future<void> getCurrentUser() async {
-    _currentUser = await AuthRepository.getCurrentUser();
-  }
+  Future<void> getCurrentUser() async {}
 
   @action
   Future<void> registerPushNotification(String token) async {}
 
   Future<void> _cleanUserData() async {
     await Future.wait([StorageUtils.removeAccessToken()]);
-
     reRegisterStoreGetIt();
   }
 

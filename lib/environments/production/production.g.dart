@@ -7,7 +7,7 @@ part of 'production.dart';
 // **************************************************************************
 
 const _$productionEnvJsonLiteral = {
-  'apiUrl': 'https://example.com',
+  'apiUrl': 'https://jitmeal-dev-api.moneteam.com/',
   'env': 'PROD',
   'production': true
 };

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -6,6 +8,7 @@ import '../../extensions/elevated_button_extension.dart';
 import '../../extensions/extensions.dart';
 import '../../providers/screen_service.dart';
 import '../../router.gr.dart';
+import '../../store/login_state/login_state.dart';
 import '../../utils/assets.dart';
 import '../../widgets/custom_button.dart';
 
@@ -16,11 +19,21 @@ class LoginPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _loginState = useMemoized(LoginState.new);
+
     final _onSignIn = useCallback(
-      () {
-        router.pushAndPopUntil(const DashboardRoute(), predicate: (_) => false);
+      () async {
+        try {
+          await _loginState.onSignIn();
+          await router.pushAndPopUntil(
+            const DashboardRoute(),
+            predicate: (_) => false,
+          );
+        } catch (e) {
+          log('$e');
+        }
       },
-      [0],
+      [_loginState],
     );
 
     return GestureDetector(
@@ -40,6 +53,9 @@ class LoginPage extends HookWidget {
                 TextField(
                   autofocus: true,
                   textInputAction: TextInputAction.next,
+                  onChanged: (value) {
+                    _loginState.userName = value;
+                  },
                   decoration: InputDecoration(
                     labelText: 'loginScreen.userName'.tr(),
                   ),
@@ -48,6 +64,9 @@ class LoginPage extends HookWidget {
                 TextField(
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
+                  onChanged: (value) {
+                    _loginState.password = value;
+                  },
                   onSubmitted: (_) {
                     _onSignIn();
                   },
