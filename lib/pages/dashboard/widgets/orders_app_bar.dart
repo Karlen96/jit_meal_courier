@@ -33,6 +33,7 @@ class OrdersAppBar extends HookWidget with PreferredSizeWidget {
           child: PopupMenuButton<FilterType>(
             onSelected: onChangeFilter,
             itemBuilder: (_) => _filterItems,
+            elevation: 2,
             child: const Icon(Icons.calendar_today_rounded),
           ),
         ),

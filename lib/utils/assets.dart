@@ -9,7 +9,14 @@ import 'color_utils.dart';
 class Assets {
   Assets._();
 
+  static const String translations = 'assets/translations';
+
   static const String logo = 'assets/images/logo.png';
+  static const String error = 'assets/icons/error.png';
+  static const String info = 'assets/icons/info.png';
+  static const String wellDone = 'assets/icons/well_done.png';
+  static const String warning = 'assets/icons/warning.png';
+  static const String close = 'assets/icons/close.png';
 }
 
 extension AssetsHelper on String {

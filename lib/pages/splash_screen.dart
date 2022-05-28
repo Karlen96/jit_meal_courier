@@ -16,6 +16,7 @@ class SplashScreenPage extends HookWidget {
         return;
       },
     );
+
     return const Scaffold(
       body: Center(
         child: FlutterLogo(

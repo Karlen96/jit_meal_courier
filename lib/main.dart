@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'app.dart';
 import 'constants/flavor_type.dart';
 import 'providers/get_it.dart';
+import 'utils/assets.dart';
 
 Future<void> run({Flavor env = Flavor.DEV}) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ Future<void> run({Flavor env = Flavor.DEV}) async {
       ],
       startLocale: const Locale('ru', 'RU'),
       fallbackLocale: const Locale('ru', 'RU'),
-      path: 'assets/translations',
+      path: Assets.translations,
       child: const MyApp(),
     ),
   );

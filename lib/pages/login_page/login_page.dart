@@ -1,11 +1,12 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../constants/button_size_type.dart';
 import '../../extensions/elevated_button_extension.dart';
 import '../../extensions/extensions.dart';
+import '../../hooks/toast_hook/custom_toast_hook.dart';
+import '../../hooks/toast_hook/hook_widget/enums.dart';
+import '../../hooks/toast_hook/hook_widget/toast_decorator_rounded_widget.dart';
 import '../../providers/screen_service.dart';
 import '../../router.gr.dart';
 import '../../store/login_state/login_state.dart';
@@ -19,6 +20,7 @@ class LoginPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _toastMessenger = useToastController();
     final _loginState = useMemoized(LoginState.new);
 
     final _onSignIn = useCallback(
@@ -30,7 +32,13 @@ class LoginPage extends HookWidget {
             predicate: (_) => false,
           );
         } catch (e) {
-          log('$e');
+          _toastMessenger.show(
+            ToastDecoratorRounded(
+              text: 'error.wrongLoginOrPassword'.tr(),
+              messageType: ToastMessageType.ERROR,
+            ),
+            context,
+          );
         }
       },
       [_loginState],
