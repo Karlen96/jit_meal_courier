@@ -72,7 +72,7 @@ class ToastDecoratorRounded extends HookWidget {
                   children: [
                     Text(
                       text,
-                      style: context.theme.bodyText1.white,
+                      style: context.theme.headline6.white,
                     ),
                   ],
                 ),

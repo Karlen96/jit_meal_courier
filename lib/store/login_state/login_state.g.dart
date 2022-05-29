@@ -41,19 +41,19 @@ mixin _$LoginState on _LoginState, Store {
     });
   }
 
-  late final _$passwordErrorAtom =
-      Atom(name: '_LoginState.passwordError', context: context);
+  late final _$errorTextAtom =
+      Atom(name: '_LoginState.errorText', context: context);
 
   @override
-  String? get passwordError {
-    _$passwordErrorAtom.reportRead();
-    return super.passwordError;
+  String? get errorText {
+    _$errorTextAtom.reportRead();
+    return super.errorText;
   }
 
   @override
-  set passwordError(String? value) {
-    _$passwordErrorAtom.reportWrite(value, super.passwordError, () {
-      super.passwordError = value;
+  set errorText(String? value) {
+    _$errorTextAtom.reportWrite(value, super.errorText, () {
+      super.errorText = value;
     });
   }
 
@@ -65,26 +65,12 @@ mixin _$LoginState on _LoginState, Store {
     return _$onSignInAsyncAction.run(() => super.onSignIn());
   }
 
-  late final _$_LoginStateActionController =
-      ActionController(name: '_LoginState', context: context);
-
-  @override
-  void validatePassword(dynamic _) {
-    final _$actionInfo = _$_LoginStateActionController.startAction(
-        name: '_LoginState.validatePassword');
-    try {
-      return super.validatePassword(_);
-    } finally {
-      _$_LoginStateActionController.endAction(_$actionInfo);
-    }
-  }
-
   @override
   String toString() {
     return '''
 userName: ${userName},
 password: ${password},
-passwordError: ${passwordError}
+errorText: ${errorText}
     ''';
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../extensions/extensions.dart';
 import '../../../themes/app_colors.dart';
+import '../../../utils/color_utils.dart';
 
 class InfoCardItem extends HookWidget {
   final String title;
@@ -17,8 +18,11 @@ class InfoCardItem extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: const BoxDecoration(
-        color: AppColors.backgroundColor,
+      decoration: BoxDecoration(
+        color: brightnessColor(
+          lightColor: AppColors.darkBlue,
+          darkColor: AppColors.white,
+        ),
       ),
       child: SizedBox(
         width: context.width,
@@ -33,8 +37,11 @@ class InfoCardItem extends HookWidget {
             const SizedBox(height: 16),
             const Divider(),
             DecoratedBox(
-              decoration: const BoxDecoration(
-                color: AppColors.white,
+              decoration: BoxDecoration(
+                color: brightnessColor(
+                  lightColor: AppColors.darkBlue,
+                  darkColor: AppColors.white,
+                ),
               ),
               child: SizedBox(
                 width: context.width,

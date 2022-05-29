@@ -42,6 +42,7 @@ class OrderInfoActions extends HookWidget {
             color: AppColors.green,
           ),
         ).paddingHorizontal(),
+        if (order.status == OrderStatus.DELIVERED) const SizedBox(height: 2),
         if (order.status == OrderStatus.DELIVERED)
           Text(_deliveredAt, style: context.theme.bodyText1)
               .paddingHorizontal(),

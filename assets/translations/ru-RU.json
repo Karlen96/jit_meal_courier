@@ -2,7 +2,9 @@
   "keywords": {
     "close": "Закрыть",
     "yes": "Да",
-    "signOut": "Выйти"
+    "signOut": "Выйти",
+    "signIn": "Вход",
+    "toComeIn": "Войти"
   },
   "dashboardScreen": {
     "orders": "Заказы",
@@ -29,10 +31,8 @@
     "declined": "Не доставлен"
   },
   "loginScreen": {
-    "signIn": "Вход",
     "userName": "Имя пользователя",
-    "password": "Пароль",
-    "toComeIn": "Войти"
+    "password": "Пароль"
   },
   "error": {
     "wrongLoginOrPassword": "Не верный логин или пароль"

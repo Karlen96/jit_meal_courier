@@ -40,7 +40,6 @@ class OrderPage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        elevation: 2,
         title: Text('№$orderId'),
       ),
       body: Stack(

@@ -39,17 +39,17 @@ final lightTheme = base.copyWith(
   primaryColor: AppColors.yellow,
   // shadowColor: Colors.grey[300],
   scaffoldBackgroundColor: AppColors.backgroundColor,
-  dividerColor: AppColors.backgroundColor1,
+  dividerColor: AppColors.backgroundColor2,
   dividerTheme: base.dividerTheme.copyWith(
     space: 1,
-    color: AppColors.backgroundColor1,
+    color: AppColors.backgroundColor2,
   ),
   primaryIconTheme: base.primaryIconTheme.copyWith(color: AppColors.darkBlue),
   iconTheme: base.iconTheme.copyWith(color: AppColors.darkBlue),
   appBarTheme: base.appBarTheme.copyWith(
     color: AppColors.white,
     centerTitle: true,
-    elevation: 0,
+    elevation: 2,
     iconTheme: const IconThemeData(
       color: AppColors.darkBlue,
     ),
@@ -122,27 +122,22 @@ final lightTheme = base.copyWith(
   cupertinoOverrideTheme: const CupertinoThemeData(
     primaryColor: AppColors.yellow,
   ),
+  drawerTheme: const DrawerThemeData(
+    elevation: 0,
+  ),
   brightness: Brightness.light,
   inputDecorationTheme: base.inputDecorationTheme.copyWith(
-    errorStyle: const TextStyle(
+    errorStyle: base.primaryTextTheme.bodyText1!.copyWith(
       color: AppColors.red,
       fontFamily: FontFamily.Roboto,
     ),
     hintStyle: base.primaryTextTheme.bodyText1!.copyWith(
       color: AppColors.darkBlue.withOpacity(0.4),
       fontFamily: FontFamily.Roboto,
-      fontWeight: FontWeight.normal,
-      fontSize: 13,
-      letterSpacing: -.32,
-      height: 1.25,
     ),
     helperStyle: base.primaryTextTheme.bodyText1!.copyWith(
       color: AppColors.darkBlue.withOpacity(0.4),
       fontFamily: FontFamily.Roboto,
-      fontWeight: FontWeight.normal,
-      fontSize: 13,
-      letterSpacing: -.32,
-      height: 1.25,
     ),
     fillColor: AppColors.white,
     contentPadding: const EdgeInsets.symmetric(horizontal: 16),
@@ -150,6 +145,18 @@ final lightTheme = base.copyWith(
       borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(
         color: AppColors.backgroundColor1,
+      ),
+    ),
+    errorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+      borderSide: BorderSide(
+        color: AppColors.red,
+      ),
+    ),
+    focusedErrorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+      borderSide: BorderSide(
+        color: AppColors.red,
       ),
     ),
     enabledBorder: const OutlineInputBorder(

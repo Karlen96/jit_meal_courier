@@ -37,22 +37,24 @@ final darkTheme = base.copyWith(
       vertical: 5,
     ),
   ),
+  drawerTheme: const DrawerThemeData(
+    backgroundColor: AppColors.darkBlue,
+    elevation: 0,
+  ),
   primaryColor: AppColors.yellow,
   // shadowColor: Colors.grey[300],
   scaffoldBackgroundColor: AppColors.darkBlue,
-  dividerColor: AppColors.backgroundColor2,
+  dividerColor: AppColors.backgroundColor.withOpacity(0.2),
   dividerTheme: base.dividerTheme.copyWith(
     space: 1,
-    indent: 24,
-    endIndent: 24,
-    color: AppColors.backgroundColor2,
+    color: AppColors.backgroundColor.withOpacity(0.2),
   ),
   primaryIconTheme: base.primaryIconTheme.copyWith(color: AppColors.darkBlue),
-  iconTheme: base.iconTheme.copyWith(color: AppColors.darkBlue),
+  iconTheme: base.iconTheme.copyWith(color: AppColors.white),
   appBarTheme: base.appBarTheme.copyWith(
     color: AppColors.darkBlue,
     centerTitle: true,
-    elevation: 0,
+    elevation: 2,
     iconTheme: const IconThemeData(
       color: AppColors.white,
     ),
@@ -134,39 +136,48 @@ final darkTheme = base.copyWith(
       fontFamily: FontFamily.Roboto,
     ),
     hintStyle: base.primaryTextTheme.bodyText1!.copyWith(
-      color: AppColors.backgroundColor2,
+      color: AppColors.darkBlue.withOpacity(0.4),
       fontFamily: FontFamily.Roboto,
-      fontWeight: FontWeight.normal,
-      fontSize: 16,
-      letterSpacing: -.32,
-      height: 1.25,
     ),
-    fillColor: AppColors.darkBlue,
+    helperStyle: base.primaryTextTheme.bodyText1!.copyWith(
+      color: AppColors.darkBlue.withOpacity(0.4),
+      fontFamily: FontFamily.Roboto,
+    ),
+    fillColor: AppColors.darkBlue40,
     contentPadding: const EdgeInsets.symmetric(horizontal: 16),
     border: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(20)),
+      borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(
-        color: Colors.transparent,
-        width: 2,
+        color: AppColors.blue,
       ),
     ),
-    enabledBorder: const UnderlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(20)),
+    errorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(
-        color: Colors.transparent,
-        width: 0,
+        color: AppColors.red,
       ),
     ),
-    focusedBorder: const UnderlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(20)),
+    focusedErrorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(
-        color: Colors.transparent,
-        width: 0,
+        color: AppColors.red,
+      ),
+    ),
+    enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+      borderSide: BorderSide(
+        color: AppColors.blue,
+      ),
+    ),
+    focusedBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+      borderSide: BorderSide(
+        color: AppColors.yellow,
       ),
     ),
     filled: true,
     labelStyle: const TextStyle(
-      color: AppColors.darkBlue,
+      color: AppColors.white,
       fontFamily: FontFamily.Roboto,
       fontWeight: FontWeight.normal,
       fontSize: 16,

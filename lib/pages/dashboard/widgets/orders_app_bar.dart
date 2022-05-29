@@ -3,6 +3,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../constants/filter_type.dart';
 import '../../../extensions/extensions.dart';
+import '../../../themes/app_colors.dart';
+import '../../../utils/color_utils.dart';
 
 class OrdersAppBar extends HookWidget with PreferredSizeWidget {
   final Function(FilterType?) onChangeFilter;
@@ -27,15 +29,16 @@ class OrdersAppBar extends HookWidget with PreferredSizeWidget {
       title: Text(
         'dashboardScreen.orders'.tr(),
       ),
-      elevation: 2,
       actions: [
-        Center(
-          child: PopupMenuButton<FilterType>(
-            onSelected: onChangeFilter,
-            itemBuilder: (_) => _filterItems,
-            elevation: 2,
-            child: const Icon(Icons.calendar_today_rounded),
+        PopupMenuButton<FilterType>(
+          color: brightnessColor(
+            lightColor: AppColors.darkBlue,
+            darkColor: AppColors.white,
           ),
+          onSelected: onChangeFilter,
+          itemBuilder: (_) => _filterItems,
+          elevation: 1,
+          child: const Icon(Icons.calendar_today_rounded),
         ),
         const SizedBox(width: 16)
       ],

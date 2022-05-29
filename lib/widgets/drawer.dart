@@ -6,7 +6,6 @@ import '../extensions/extensions.dart';
 import '../providers/screen_service.dart';
 import '../router.gr.dart';
 import '../store/auth/auth_state.dart';
-import '../themes/app_colors.dart';
 import '../utils/assets.dart';
 
 class DrawerWidget extends HookWidget {
@@ -33,7 +32,6 @@ class DrawerWidget extends HookWidget {
           ),
           Column(
             children: [
-              Divider(color: AppColors.darkBlue40),
               ListTile(
                 leading: const Icon(Icons.logout),
                 title: Text('keywords.signOut'.tr()),

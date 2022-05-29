@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../extensions/extensions.dart';
 import '../themes/app_colors.dart';
+import '../utils/color_utils.dart';
 
 class LoadingWidget extends HookWidget {
   const LoadingWidget({Key? key}) : super(key: key);
@@ -10,8 +11,11 @@ class LoadingWidget extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: const BoxDecoration(
-        color: AppColors.white,
+      decoration: BoxDecoration(
+        color: brightnessColor(
+          lightColor: AppColors.darkBlue,
+          darkColor: AppColors.white,
+        ),
       ),
       child: SizedBox(
         width: context.width,

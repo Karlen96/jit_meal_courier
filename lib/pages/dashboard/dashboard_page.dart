@@ -86,6 +86,9 @@ class DashboardPage extends HookWidget {
             color: AppColors.yellow,
             child: Observer(
               builder: (_) => ListView.builder(
+                physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics(),
+                ),
                 itemCount: _dashboardState.orders.length,
                 itemBuilder: (_, i) {
                   return CustomListTile(
