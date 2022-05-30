@@ -87,7 +87,6 @@ class _ToastView {
     }
     _overlayEntry?.remove();
     _overlayEntry = null;
-    _controller?.dispose();
     _controller = null;
   }
 }
